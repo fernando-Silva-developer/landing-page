@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Law House - Automação Jurídica para Advogados</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="#" class="logo">Law House</a>
+        <ul class="nav-links">
+          <li><a href="#home">Início</a></li>
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#video">Como Funciona</a></li>
+          <li><a href="#contact">Contato</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content fade-in">
+        <h1>Bem-vindo à Law House</h1>
+        <p>A PRIMEIRA agente de IA jurídica do Brasil!!!</p>
+        <p>
+          Automatize a construção de peças jurídicas e pesquisas de
+          jurisprudência com nossa plataforma
+        </p>
+        <a href="#contact" class="cta-button">Experimente Agora</a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2>Sobre a Law House</h2>
+        <div class="about-content fade-in">
+          <div class="about-text">
+            <p>
+              A Law House é uma plataforma inovadora desenvolvida para advogados
+              que buscam eficiência e precisão. Nosso sistema automatiza a
+              criação de peças jurídicas e realiza pesquisas de jurisprudência
+              em tempo recorde, permitindo que você foque no que realmente
+              importa: Seus Clientes.
+            </p>
+            <p><br /></p>
+            <p>
+              Com tecnologia de ponta e uma interface intuitiva, a Law House
+              transforma a prática jurídica, reduzindo o tempo gasto em tarefas
+              repetitivas e aumentando a qualidade do seu trabalho. Junte-se a
+              milhares de advogados que já confiam em nossa solução.
+            </p>
+          </div>
+          <div class="about-image">
+            <img src="image/casalei.jpeg" alt="Plataforma Law House" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video" class="video-section">
+      <div class="container">
+        <h2>Como a Law House Funciona</h2>
+        <div class="video-container fade-in">
+          <!-- Substitua o src pelo link do vídeo que você escolher -->
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/Ag5FcHkbCoc?si=cD3vIAdY2xAHdkl1"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>
+          Quer ter acesso antecipado?
+          <p style="font-weight: 300">Preencha esse formulário</p>
+        </h2>
+        <form class="contact-form fade-in" id="contactForm">
+          <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefone</label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
+          <button type="submit" class="submit-button">Enviar</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>
+          Contato:
+          <a href="mailto:Lawhouse30@gmail.com">Lawhouse30@gmail.com</a> |
+          Telefone: (12) 99182-4606
+        </p>
+        <!-- <p>Endereço: Av. Principal, 123, São Paulo, SP</p> -->
+        <p>© 2025 Law House. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Smooth Scroll
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      // Fade-in Animation
+      const fadeIns = document.querySelectorAll(".fade-in");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      fadeIns.forEach((element) => observer.observe(element));
+
+      // Form Submission
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const phone = document.getElementById("phone").value;
+
+          // Simula envio (substituir por integração real com backend)
+          alert(`Obrigado, ${name}! Entraremos em contato em breve.`);
+          this.reset();
+        });
+    </script>
+  </body>
+</html>
